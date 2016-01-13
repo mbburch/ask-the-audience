@@ -20,6 +20,11 @@ for (var i = 0; i < buttons.length; i++) {
   });
 }
 
+var voteTally = document.getElementById('vote-tally');
+
 socket.on('voteCount', function(votes) {
-  console.log(votes);
+  var talliedVotes = Object.keys(votes).map(function(vote) {
+    return ' ' + vote + ': ' + votes[vote];
+  });
+  voteTally.innerText = 'Current Vote Tally: ' + talliedVotes;
 });
