@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: lighter;
+  color: #88BB92;
+}
+
+h1 {
+  font-family: 'Bangers', sans-serif;
+  font-size: 60px;
+  color: #714955;
+  text-shadow: 4px 4px 4px #aaa;
+  text-align: center;
+}
+
+#connection-count, #status-message, #vote-tally, #user-vote {
+  font-size: 1.5em;
+}
+
+button
+{
+	font-weight: bold;
+	padding: 10px 15px;
+	margin: 20px auto;
+	color: #88BB92;
+	background: -webkit-linear-gradient(#888, #555);
+	background: linear-gradient(#888, #555);
+	border: 0 none;
+	border-radius: 3px;
+	text-shadow: 0 -1px 0 #000;
+	box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
+}
