@@ -17,6 +17,7 @@ var buttons = document.querySelectorAll('#choices button');
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function () {
     socket.send('voteCast', this.innerText);
+    socket.send('userVoted', this.innerText);
   });
 }
 
@@ -27,4 +28,10 @@ socket.on('voteCount', function(votes) {
     return ' ' + vote + ': ' + votes[vote];
   });
   voteTally.innerText = 'Current Vote Tally: ' + talliedVotes;
+});
+
+var userVote = document.getElementById('user-vote');
+
+socket.on('userVote', function(vote) {
+  userVote.innerText = 'You just cast your vote for: ' + vote + '.';
 });

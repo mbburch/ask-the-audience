@@ -42,6 +42,12 @@ io.on('connection', function (socket) {
     }
   });
 
+  socket.on('message', function (channel, message) {
+    if (channel === 'userVoted') {
+      socket.emit('userVote', message);
+    }
+  });
+
 });
 
 function countVotes (votes) {
